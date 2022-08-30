@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- <mapper namespace="com.care.boot.rent.IKrnDAO"> -->
+<!-- <select id="rnList" -->
+<!-- resultType="com.care.boot.rent.Kcar_Repair_NormalDTO"> -->
+<!-- SELECT * FROM kcar_repair_normal -->
+<!-- </select> -->
+<!-- </mapper> -->
+
+<mapper namespace="com.one.kcar.dao.rent.IKrnDAO">
+	<select id="rnrList" resultType="com.one.kcar.dto.rent.Kcar_Repair_NormalDTO">
+		SELECT B.* FROM(
+		SELECT rownum rn, A.* FROM(
+		SELECT * FROM kcar_repair_normal
+			<choose>
+				<when test="select == 'location'">WHERE crn_location LIKE '%'||#{search}||'%'</when>
+				<when test="select == 'name'">WHERE crn_name LIKE '%'||#{search}||'%'</when>
+			</choose>
+		)A
+		)B WHERE rn BETWEEN 1 and 27
+	</select>
+	
+	<select id="rarList" resultType="com.one.kcar.dto.rent.Kcar_Repair_AccidentDTO">
+		SELECT B.* FROM(
+		SELECT rownum rn, A.* FROM(
+		SELECT * FROM kcar_repair_accident
+			<choose>
+				<when test="select1 == 'location'">WHERE cra_location LIKE '%'||#{search1}||'%'</when>
+				<when test="select1 == 'name'">WHERE cra_name LIKE '%'||#{search1}||'%'</when>
+			</choose>
+		)A
+		)B WHERE rn BETWEEN 1 and 27
+	</select>
+	
+</mapper>
+

@@ -1,0 +1,20 @@
+<svg width="56" height="72" viewBox="0 0 56 72" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path id="u5c9q1h2wa" d="M0 .194h32.35v.39H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path d="M46.064 44.573h4.16a3.443 3.443 0 0 0 3.443-3.444V21.712a3.443 3.443 0 0 0-3.444-3.443h-32.52a3.443 3.443 0 0 0-3.445 3.443v4.16" fill="#E2E8EE"/>
+        <path d="M7 52.193h35.965a3.443 3.443 0 0 0 3.443-3.444V29.332a3.443 3.443 0 0 0-3.443-3.443H10.444A3.443 3.443 0 0 0 7 29.332v8.877" fill="#FFF"/>
+        <path d="M6.655 38.192v-8.877a3.443 3.443 0 0 1 3.444-3.443h32.522a3.443 3.443 0 0 1 3.443 3.443v19.417a3.443 3.443 0 0 1-3.443 3.444h-3.616" stroke="#16171D" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(7 25.889)">
+            <mask id="khcyflyd4b" fill="#fff">
+                <use xlink:href="#u5c9q1h2wa"/>
+            </mask>
+            <path fill="#16171D" mask="url(#khcyflyd4b)" d="M0 .583h32.349"/>
+        </g>
+        <path stroke="#16171D" stroke-linecap="round" stroke-linejoin="round" d="M39.005 52.176H4.83M46.064 44.573h4.16a3.443 3.443 0 0 0 3.443-3.444V21.712a3.443 3.443 0 0 0-3.444-3.443h-32.52a3.443 3.443 0 0 0-3.445 3.443v4.16M17.313 47.65H9.155M10.492 42.98H2.334"/>
+        <g stroke="#B70F28" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m20.715 34.721 2.707 8.61 2.945-6.669 2.999 6.652 2.591-8.597M30.991 37.904h2.624M19.104 37.904h2.613"/>
+        </g>
+    </g>
+</svg>

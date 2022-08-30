@@ -1,0 +1,21 @@
+<svg width="327" height="84" viewBox="0 0 327 84" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="q6oeo2h0jc">
+            <stop stop-color="#262372" offset="0%"/>
+            <stop stop-color="#2B2879" offset="25.054%"/>
+            <stop stop-color="#39368B" offset="50.308%"/>
+            <stop stop-color="#09092B" offset="51.678%"/>
+            <stop stop-color="#0F0D3D" offset="100%"/>
+        </linearGradient>
+        <filter x="-2.2%" y="-6.6%" width="104.4%" height="118.4%" filterUnits="objectBoundingBox" id="ek3hgsyjua">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0" in="shadowBlurOuter1"/>
+        </filter>
+        <rect id="gvw6f9iibb" x="0" y="0" width="319" height="76" rx="9.8"/>
+    </defs>
+    <g transform="translate(4 2)" fill="none" fill-rule="evenodd">
+        <use fill="#000" filter="url(#ek3hgsyjua)" xlink:href="#gvw6f9iibb"/>
+        <use fill="url(#q6oeo2h0jc)" xlink:href="#gvw6f9iibb"/>
+    </g>
+</svg>

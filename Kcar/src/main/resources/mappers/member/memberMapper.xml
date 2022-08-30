@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- (m_id,m_pw,m_name,m_email,m_zipcode,m_addr1,m_addr2,m_tel,m_role,m_oauth,m_oauthEmail)  -->
+<mapper namespace="com.one.kcar.dao.member.IMemberDAO">
+
+	<select id="isExistId" parameterType="String" resultType="int">
+		SELECT count(*) FROM kcar_member WHERE m_email=#{m_email}
+	</select>
+	<insert id="insertMember" parameterType="com.one.kcar.dto.member.MemberDTO">
+		INSERT INTO kcar_member VALUES (m_id_seq.nextval, #{m_pw}, #{m_name}, #{m_email}, #{m_zipcode}, #{m_addr1}, #{m_addr2},#{m_tel}, #{m_role},#{m_oauth,jdbcType=VARCHAR} ,#{m_oauthEmail,jdbcType=VARCHAR})
+	</insert>
+	<select id="login" parameterType="com.one.kcar.dto.member.MemberDTO" resultType="com.one.kcar.dto.member.MemberDTO">
+		SELECT * FROM kcar_member WHERE m_email=#{m_email}
+	</select>
+	
+	<update id="update">
+		UPDATE kcar_member SET m_pw=#{m_pw}, m_zipcode=#{m_zipcode}, m_addr1=#{m_addr1}, m_addr2=#{m_addr2} , m_tel=#{m_tel} WHERE m_email=#{m_email}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		DELETE FROM kcar_member WHERE m_email=#{m_email}
+	</delete>
+	
+	<update id="pw_update">
+		UPDATE kcar_member SET m_pw=#{m_pw} WHERE m_email=#{m_email}
+	</update>
+	
+	<select id="check_kakao" parameterType="String" resultType="com.one.kcar.dto.member.MemberDTO">
+		SELECT * FROM kcar_member WHERE m_oauthEmail=#{kakao_email}
+	</select>
+
+	
+
+</mapper>

@@ -1,0 +1,747 @@
+
+/*
+div {
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+}
+*/
+
+#kcarview{
+	display:flex;
+	flex-wrap : nowrap;
+	margin :0px;
+	
+	/*
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+   */
+}
+
+#tutorial-help .tutorial-help-info{
+	background : url('/images/3dview/tutorial_img.png') no-repeat center center;
+	
+	width : 580px;
+	height : 364px;
+	background-size : 580px 364px;
+	
+	display: inline-block;
+}
+
+#tutorial-help .tutorial-help-close{
+	background : url('/images/3dview/close_btn.png') no-repeat center center;
+	
+	position: absolute;
+	top : 20px;
+	left: 852px;
+	width : 30px;
+	height : 30px;
+	/*border : 1px solid rgb(255,255,255);*/
+	background-size : 30px;	
+	cursor : pointer;
+}
+
+#tutorial-help .tutorial-help-7day{
+	position: absolute;
+	
+	bottom : 2px;
+	right : 50px;
+	
+	color : #FFFFFF;
+	font-size : 14px;
+	
+	cursor : pointer;
+}
+
+#tutorial-help .tutorial-help-7day-close{
+	background : url('/images/3dview/tutorial_close_btn.png') no-repeat center center;
+
+	position: absolute;
+	bottom : 2px;
+	right : 10px;
+	
+	width : 20px;
+	height : 20px;
+	background-size : 14px;	
+
+	color : #FFFFFF;	
+
+	cursor : pointer;
+}
+
+#kcar-watermark-image{
+	background : url('/images/3dview/watermark.png') no-repeat center center;
+	
+	position: absolute;
+	left : 10px; 
+	top : 10px;
+	
+	width : 40px;
+	height : 40px;
+	
+	background-size : 40px;
+}
+
+#kcar-3dlogo-image{
+	background : url('/images/3dview/3dlogo.png') no-repeat center center;
+	
+	position: absolute;
+	left : 10px; 
+	bottom: 10px;
+	
+	width : 40px;
+	height : 40px;
+	
+	background-size : 40px;
+	
+}
+
+#kcar-quaranty-image{
+	position: absolute;
+	left : 10px; 
+	top: 50px;
+	
+	width : 40px;
+	height : 25px;
+	line-height : 25px;
+	
+	text-align : center;
+	vertical-align : middle;
+	
+	letter-spacing : -0.07em;
+	font-size : 14px;
+	color: #FFF;
+	
+	background-color : #FA0022;
+}
+
+#maximize-image{
+	background : url('/images/3dview/btn_maximize_screen.png') no-repeat center center;
+	
+	width : 40px;
+	height : 40px;
+	background-size : 40px 40px;
+	
+	right : 10px;
+	bottom : 10px;
+}
+
+#maximize-close-image{
+	
+	background : url('/images/3dview/close_btn.png') no-repeat center center;
+	
+	width : 36px;
+	height : 36px;
+	background-size : 36px 36px;
+	
+	right : 10px;
+	top : 10px;
+}
+
+#maximize-image:active
+{
+	opacity : 0.5;
+}
+
+
+/* -------------------- Control View -------------------- */
+#control-view #control-box-doorclose{
+	background : url('/images/3dview/closed_on.png') no-repeat center center;
+	
+	width : 50px;
+	height : 50px;
+	background-size : 50px;
+	
+	margin-top : 137px;
+	
+	background-color :  rgb(68,68,68);
+	cursor : pointer;
+}
+
+#control-view #control-box-dooropen{
+	background : url('/images/3dview/open_on.png') no-repeat center center;
+	
+	width : 50px;
+	height : 50px;
+	background-size : 50px;
+	
+	margin-top : 1px;
+	
+	background-color :  rgb(68,68,68);
+	cursor : pointer;	
+}
+
+#control-view #control-box-in{
+	background : url('/images/3dview/indoor_on.png') no-repeat center center;
+	
+	width : 50px;
+	height : 50px;
+	background-size : 50px;	
+	
+	margin-top : 1px;
+	
+	background-color :  rgb(68,68,68);
+	cursor : pointer;	
+}
+
+#control-view #control-zoom-in{
+	background : url('/images/3dview/zoom_in_on.png') no-repeat center center;
+	
+	width : 50px;
+	height : 50px;
+	background-size : 50px;	
+	
+	margin-top : 20px;
+	
+	background-color :  rgb(68,68,68);
+	cursor : pointer;
+}
+
+#control-view #control-zoom-out{
+	background : url('/images/3dview/zoom_out_on.png') no-repeat center center;
+	
+	width : 50px;
+	height : 50px;
+	background-size : 50px;	
+	
+	margin-top : 1px;
+	
+	background-color :  rgb(68,68,68);
+	cursor : pointer;
+}
+
+#control-view #control-box-detail{
+	background : url('/images/3dview/switch_off.png') no-repeat center center;
+
+	width : 50px;
+	height : 50px;
+	background-size : 50px;
+	
+	margin-top : 20px;
+	
+	background-color :  rgb(68,68,68);
+	cursor : pointer;	
+}
+
+#control-view #control-box-doorclose.control-box-select,
+#control-view #control-box-dooropen.control-box-select,
+#control-view #control-box-in.control-box-select
+{
+	background-color:rgb(255, 1, 65);
+}
+
+#control-view #control-box-detail.control-box-select{
+	background : url('/images/3dview/switch_on.png') no-repeat center center;
+	background-color :  rgb(68,68,68);	
+}
+
+#control-box-doorclose .control-tooltip-text,
+#control-box-dooropen .control-tooltip-text,
+#control-box-in .control-tooltip-text,
+#control-zoom-in .control-tooltip-text,
+#control-zoom-out .control-tooltip-text
+{
+    visibility: hidden;
+	line-height: 18px;
+	vertical-align : middle;
+    text-align: center;
+    border-radius: 4px;
+    padding: 3px 10px;
+    position: absolute;
+    z-index: 1;
+    top: -35%;
+    left: 100%;
+    opacity: 0;
+	
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	
+	background : url('/images/3dview/tooltip_red.png') no-repeat center center;	
+	
+    transition: opacity 0.8s;
+}
+
+#control-box-doorclose:hover .control-tooltip-text, 
+#control-box-dooropen:hover .control-tooltip-text,
+#control-box-in:hover .control-tooltip-text,
+#control-zoom-in:hover .control-tooltip-text,
+#control-zoom-out:hover .control-tooltip-text
+{
+    visibility: visible;
+	opacity : 1;
+}
+
+/* -------------------- Vertical Slide View&Show -------------------- */
+
+#slide-vertical-view #slide-vertical-up{
+	width : 13px;
+	height : 9px;
+	background-size : 13px 9px;
+
+	cursor : pointer;
+	
+}
+
+#slide-vertical-view #slide-vertical-up[slide-onoff="0"]{
+	background : url('/images/3dview/arrow_up_btn_dim.png') no-repeat center center;
+}
+
+#slide-vertical-view #slide-vertical-up[slide-onoff="1"]{
+	background : url('/images/3dview/arrow_up_btn.png') no-repeat center center;	
+}
+
+#slide-vertical-view #slide-vertical-down{
+	width : 13px;
+	height : 9px;
+	background-size : 13px 9px;
+
+	cursor : pointer;
+}
+#slide-vertical-view #slide-vertical-down[slide-onoff="0"]{
+	background : url('/images/3dview/arrow_down_btn_dim.png') no-repeat center center;
+}
+
+#slide-vertical-view #slide-vertical-down[slide-onoff="1"]{
+	background : url('/images/3dview/arrow_down_btn.png') no-repeat center center;
+}
+
+#slide-horizontal-show #slide-show-prev{
+	background : url('/images/3dview/arrow_prev.png') no-repeat center center;
+	
+	width : 30px;
+	height : 49px;
+	background-size : 30px 49px;
+	
+	background-color : rgba(0,0,0,0.3);	
+}
+
+#slide-horizontal-show #slide-show-next{
+	background : url('/images/3dview/arrow_next.png') no-repeat center center;
+	
+	width : 30px;
+	height : 49px;
+	background-size : 30px 49px;
+	
+	background-color : rgba(0,0,0,0.3);		
+}
+#slide-horizontal-show #slide-show-close{
+	background : url('/images/3dview/win_close_btn.png') no-repeat center center;	
+	
+	width : 34px;
+	height : 34px;
+	background-size : 24px;
+	
+	background-color : rgba(0,0,0,0.3);
+}
+
+#slide-vertical-view #slide-scrollBlind li:hover{
+	cursor:pointer;
+}
+
+#slide-vertical-view #slide-scrollBlind .dimm{
+	opacity:1;
+	border : 0px;
+}
+
+#slide-vertical-view #slide-scrollBlind .active{
+	opacity:1;
+	border : 2px solid #FF0141 !important;
+}
+
+#slide-horizontal-show #slide-show-prev,
+#slide-horizontal-show #slide-show-next,
+#slide-horizontal-show #slide-show-close,
+#slide-horizontal-show #slide-show-count
+{
+	position: absolute;	
+	z-index: 100;
+	cursor:pointer;
+}
+
+/* -------------------- Vertical Slide View&Show -------------------- */
+
+
+/* -------------------- Mark Info -------------------- */
+
+/* alpha �쟾�떒怨� �냼�뒪 */
+#mark-sign .mark-tooltip[mark-sign="1"]{
+	background : url('/images/3dview/circle_ico.png') no-repeat center center;
+	
+	width : 34px;
+	height : 34px;
+	background-size : 34px;
+	
+	opacity : 0.8;
+
+}
+
+#mark-sign .mark-tooltip[mark-sign="0"]{
+	background : url('/images/3dview/triangle_ico.png') no-repeat center center;
+
+	width : 34px;
+	height : 34px;
+	background-size : 34px;
+	
+	opacity : 0.8;
+}
+/* alpha �쟾�떒怨� �냼�뒪 */
+
+
+#mark-sign .mark-tooltip .mark-tooltip-icon[mark-sign="1"]{
+	background : url('/images/3dview/circle_ico.png') no-repeat center center;
+	
+	width : 34px;
+	height : 34px;
+	/*background-size : 34px;*/
+	
+	opacity : 0.8;
+
+}
+
+#mark-sign .mark-tooltip .mark-tooltip-icon[mark-sign="0"]{
+	background : url('/images/3dview/triangle_ico.png') no-repeat center center;
+
+	width : 34px;
+	height : 34px;
+	/*background-size : 34px;*/
+	
+	opacity : 0.8;
+}
+
+#mark-detail-view .mark-detail-sign[mark-sign="1"]{
+	background : url('/images/3dview/circle_ico.png') no-repeat center center;	
+
+	width : 25px;
+	height : 25px;
+	background-size : 25px;
+	
+
+}
+
+#mark-detail-view .mark-detail-sign[mark-sign="0"]{
+	background : url('/images/3dview/triangle_ico.png') no-repeat center center;
+	
+	width : 25px;
+	height : 25px;
+	background-size : 25px;	
+}
+
+#mark-detail-view .mark-detail-close{
+	background : url('/images/3dview/win_close_btn.png') no-repeat center center;
+	
+	width : 13px;
+	height : 13px;
+	background-size : 13px;	
+	
+}
+
+#mark-detail-view #mark-detail-prev{
+	background : url('/images/3dview/arrow_prev.png') no-repeat center center;
+	
+	width : 30px;
+	height : 49px;
+	background-size : 24px 39.2px;	
+
+	background-color : rgba(0,0,0,0.3);	
+
+    cursor : pointer;
+}
+
+#mark-detail-view #mark-detail-next{
+	background : url('/images/3dview/arrow_next.png') no-repeat center center;	
+	
+	width : 30px;
+	height : 49px;
+	background-size : 24px 39.2px;	
+
+	background-color : rgba(0,0,0,0.3);	
+
+    cursor : pointer;
+}
+
+#mark-detail-view #mark-detail-zoomin{
+	background : url('/images/3dview/mark_zoom_in.png') no-repeat center center;	
+	
+	width : 32px;
+	height : 32px;
+	background-size : 24px;
+
+	background-color : rgba(0,0,0,0.3);	
+
+    cursor : pointer;
+}
+
+#mark-detail-view #mark-detail-close{
+	background : url('/images/3dview/win_close_btn.png') no-repeat center center;	
+	
+	width : 36px;
+	height : 36px;
+	background-size : 22px;
+
+	background-color : rgba(0,0,0,0.3);	
+
+    cursor : pointer;
+}
+
+
+#mark-detail-zoomin-view #mark-detail-zoomin-close{
+	background : url('/images/3dview/win_close_btn.png') no-repeat center center;	
+	
+	width : 32px;
+	height : 32px;
+	background-size : 24px;
+
+	background-color : rgba(0,0,0,0.3);
+	
+	cursor: pointer;	
+}
+
+#slide-horizontal-show #slide-show-prev:active,
+#slide-horizontal-show #slide-show-next:active,
+#slide-horizontal-show #slide-show-close:active,
+#mark-detail-view #mark-detail-prev:active,
+#mark-detail-view #mark-detail-next:active,
+#mark-detail-view #mark-detail-zoomin:active,
+#mark-detail-view #mark-detail-close:active
+{
+	opacity : 0.2;
+}
+
+/* alpha �쟾�떒怨� �냼�뒪 [[ */
+.mark-tooltip[mark-sign="1"] .mark-tooltip-text {
+    visibility: hidden;
+    /*width: 160px;*/
+    text-align: center;
+    border-radius: 4px;
+    padding: 3px 10px;
+    position: absolute;
+    z-index: 1;
+    top: 82%;
+    left: 70%;
+    opacity: 0;
+	
+	letter-spacing : -1px;
+    font-weight: 500;
+	
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	
+	background-color: rgb(0,150,252);
+	
+    transition: opacity 0.8s;
+}
+
+.mark-tooltip[mark-sign="0"] .mark-tooltip-text {
+    visibility: hidden;
+    /*width: 160px;*/
+    text-align: center;
+    border-radius: 4px;
+    padding: 3px 10px;
+    position: absolute;
+    z-index: 1;
+    top: -30%;
+    right: 60%;
+    opacity: 0;
+
+	letter-spacing : -1px;
+	font-weight: 500;
+	
+	display:inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	
+	background-color : rgb(255,98,19);
+	
+    transition: opacity 0.8s;
+}
+/* alpha �쟾�떒怨� �냼�뒪 ]]*/
+
+.mark-tooltip[mark-data="1"] .mark-tooltip-text {
+    visibility: hidden;
+    /*width: 160px;*/
+    text-align: center;
+    border-radius: 4px;
+    padding: 3px 10px;
+    position: absolute;
+    z-index: 1;
+    top: 82%;
+    left: 70%;
+    opacity: 0;
+	
+	letter-spacing : -1px;
+    font-weight: 500;
+	
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	
+	background-color: rgb(0,150,252);
+	
+    transition: opacity 0.8s;
+}
+
+.mark-tooltip[mark-data="0"] .mark-tooltip-text {
+    visibility: hidden;
+    /*width: 160px;*/
+    text-align: center;
+    border-radius: 4px;
+    padding: 3px 10px;
+    position: absolute;
+    z-index: 1;
+    top: -30%;
+    right: 60%;
+    opacity: 0;
+
+	letter-spacing : -1px;
+	font-weight: 500;
+	
+	display:inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	
+	background-color : rgb(255,98,19);
+	
+    transition: opacity 0.8s;
+}
+
+.mark-tooltip .mark-tooltip-text::after {
+	content:"";
+	position : absolute;
+}
+
+/*
+.mark-tooltip[mark-sign="0"] .mark-tooltip-text::after {
+	
+	top     : 52%;
+	left    : 86%;
+	
+	margin-top : 0px;
+	border-width: 10px;
+	border-style : solid;
+	
+	transform: rotate(70deg);
+	
+	border-color : rgb(255, 98, 19) transparent transparent transparent;
+}
+
+
+.mark-tooltip[mark-sign="1"] .mark-tooltip-text::after {
+	top     : -4%;
+	right   : 92%;
+	
+	margin-top : 0px;
+	border-width: 10px;
+	border-style : solid;
+	
+	transform: rotate(15deg);
+	
+	border-color : rgb(0,150,252) transparent transparent transparent;
+}
+*/
+
+.mark-tooltip:hover .mark-tooltip-text {
+    visibility: visible;
+	opacity : 0.8;
+}
+
+/* -------------------- Mark Info -------------------- */
+
+/* -------------------- Panorama View -------------------- */
+
+/* panorama */
+
+.custom-hotspot-water{
+	background-image: url('/images/3dview/kcar_water.png');
+	
+	height: 100px;
+	width: 100px;
+
+	background-size : 100px;
+}
+
+.custom-hotspot-0 {
+	background-image: url('/images/3dview/triangle_ico.png');
+}
+
+.custom-hotspot-1 {
+	background-image: url('/images/3dview/circle_ico.png');
+} 
+
+.custom-hotspot-0,
+.custom-hotspot-1 
+{
+	height: 34px;
+	width: 34px;
+
+	background-size : 34px;
+}
+
+.custom-hotspot-0:hover,
+.custom-hotspot-1:hover
+{
+	cursor: pointer;
+}
+
+div.custom-tooltip span {
+	visibility: hidden;
+    max-width: 200px;
+	
+	color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 3px 10px;
+    position: absolute;
+	margin-left: -220px;
+	top :0px;
+    opacity: 0;
+
+	letter-spacing : -1px;
+	font-weight: 500;
+	cursor: pointer;
+	
+    transition: opacity 0.8s;
+}
+
+.custom-hotspot-0.custom-tooltip span{
+	background-color : rgb(255,98,19);
+}
+
+.custom-hotspot-1.custom-tooltip span{
+	
+	background-color: rgb(0,150,252);
+}
+
+div.custom-tooltip:hover span{
+    visibility: visible;	
+	opacity : 1;	
+}
+    
+div.custom-tooltip:hover span:after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-width: 8px;
+	border-style: solid;
+
+	bottom: -15px;
+	left: -10px;
+	margin: 0 50%;
+}
+
+.custom-hotspot-0:hover.custom-tooltip span:after{
+	border-color: rgb(255,98,19) transparent transparent transparent;
+}
+
+.custom-hotspot-1:hover.custom-tooltip span:after{
+	border-color: rgb(0,150,252) transparent transparent transparent;
+}	
+
+
+
+/* -------------------- Panorama View -------------------- */

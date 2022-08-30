@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.one.kcar.dao.sell.IMyPageDAO">
+	
+	<select id="mycarsell" parameterType="String" resultType="com.one.kcar.dto.sell.SellDTO">
+		select * from kcar_sell_request where m_email = #{m_email}
+	</select>
+	<select id="rent_list" parameterType="String" resultType="com.one.kcar.dto.rent.kcarCarRentDTO">
+		select * from kcarcarrent
+	</select>
+
+</mapper>

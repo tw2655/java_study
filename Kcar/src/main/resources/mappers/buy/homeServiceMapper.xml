@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.kcar.dao.buy.IHomeServiceDAO">
+	<select id="carList" resultType="com.one.kcar.dto.buy.CarDTO">
+		SELECT R.* FROM(SELECT * FROM KCAR_CAR ORDER BY DBMS_RANDOM.RANDOM) R WHERE ROWNUM <![CDATA[<=]]> 20
+	</select>
+	<select id="reviewList" resultType="com.one.kcar.dto.buy.BuyReviewDTO">
+		SELECT * FROM kcar_buy_review WHERE ROWNUM <![CDATA[<=]]> 3 ORDER BY c_c_index desc
+	</select>
+	<select id="quesionList" resultType="com.one.kcar.dto.buy.QuestionDTO">
+		SELECT * FROM KCAR_QUESTION WHERE q_classification = '브랜드'
+	</select>
+	<select id="memberCount" resultType="String">
+		SELECT SUM(COUNT(m_id)) AS COUNT FROM KCAR_MEMBER GROUP BY m_id
+	</select>
+</mapper>

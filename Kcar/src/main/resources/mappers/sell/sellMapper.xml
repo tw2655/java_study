@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.one.kcar.dao.sell.ISellDAO">
+
+
+	<insert id="sellRequest" parameterType="com.one.kcar.dto.sell.SellDTO">
+		Insert into kcar_Sell_request values
+		(#{s_r_num}, #{s_r_model}, #{s_r_distance}, #{m_id},#{m_email},#{s_r_progress},#{s_r_when},#{s_r_marketing},#{s_r_date})
+	</insert>
+	
+	<select id="brandlist" resultType="String">
+		select cb_brand from kcar_carbrand
+	</select>
+	
+	<select id="modellist" parameterType="String" resultType="String">
+		select cb_m_model from kcar_carbrand_model where cb_brand = #{brand} 
+	</select>
+	
+	<select id="reviewList" resultType="com.one.kcar.dto.sell.SellReviewDTO">
+		select * from kcar_sell_review where s_r_num between #{begin} and #{end}
+	</select>
+	<select id="reviewView" parameterType="Int" resultType="com.one.kcar.dto.sell.SellReviewDTO">
+		select * from kcar_sell_review where s_r_num=#{num}
+	</select>
+	
+	<select id="reviewListcount" resultType="int">
+		select count(*) from kcar_sell_review 
+	</select>
+</mapper>

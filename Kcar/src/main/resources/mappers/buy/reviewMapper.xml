@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.one.kcar.dao.buy.IBuyReviewDAO">
+	<select id="buyReviewList" resultType="com.one.kcar.dto.buy.BuyReviewDTO">
+		SELECT rr.* FROM (
+			SELECT ROWNUM RN, r.* FROM (
+				SELECT br_c.*,c.cb_brand,c.cb_m_model FROM (
+					SELECT br.*, c.c_num FROM KCAR_BUY_REVIEW br 
+			    	LEFT JOIN KCAR_CAR_CONTRACT c 
+			    	ON br.c_c_index = c.c_c_index
+			    	) br_c 
+				LEFT JOIN KCAR_CAR c 
+				ON br_c.c_num = c.c_num
+				ORDER BY c_c_index desc
+				) r
+		 	) rr
+		WHERE RN BETWEEN ${start} AND ${end}
+	</select>
+	<select id="reviewCnt" resultType="String">
+		SELECT SUM(COUNT(c_c_index)) AS COUNT FROM kcar_buy_review GROUP BY c_c_index
+	</select>
+</mapper>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.one.kcar.dao.admin.IadminDAO">
+	
+	<select id="sell_list" parameterType="String" resultType="com.one.kcar.dto.sell.SellDTO">
+		select * from kcar_sell_request 
+	</select>
+	<select id="check" parameterType="String" resultType="com.one.kcar.dto.sell.SellDTO">
+		SELECT * FROM kcar_sell_request WHERE s_r_num=#{s_r_num}
+	</select>
+	<insert id="insert_Car" parameterType="com.one.kcar.dto.admin.CarDTO">
+		INSERT INTO kcar_car VALUES (#{c_num},#{c_model},#{cb_brand},#{cb_m_model},#{c_year},#{c_distance},#{c_price},#{c_color},#{c_fuel},#{c_change},#{c_acident},#{c_seat},#{c_rent},#{c_photo},#{st_name},#{m_email},#{c_salestatus})
+	</insert>
+	<insert id="insert_Carinfo" parameterType="com.one.kcar.dto.buy.CarInfoDTO">
+		INSERT INTO kcar_car_info VALUES (#{c_num},#{c_i_recommend},#{c_i_summary},#{c_i_history},#{c_i_insurance})
+	</insert>
+	<insert id="insert_Caroption" parameterType="com.one.kcar.dto.admin.CaroptionDTO">
+		INSERT INTO kcar_car_option VALUES (#{c_num},#{c_o_sonRoof,jdbcType=VARCHAR},#{c_o_hiPass,jdbcType=VARCHAR},#{c_o_backSensor,jdbcType=VARCHAR},#{c_o_camera,jdbcType=VARCHAR},#{c_o_navigation,jdbcType=VARCHAR},#{c_o_handleHot,jdbcType=VARCHAR},#{c_o_airback,jdbcType=VARCHAR},#{c_o_smartKey,jdbcType=VARCHAR},#{c_o_blackBox,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insert_Cartag" parameterType="com.one.kcar.dto.admin.CarTagDTO">
+		INSERT INTO kcar_car_tag VALUES (#{c_num},#{c_t_certified,jdbcType=VARCHAR},#{c_t_distance,jdbcType=VARCHAR},#{c_t_newCar,jdbcType=VARCHAR},#{c_t_fourWheel,jdbcType=VARCHAR},#{c_t_maintenance,jdbcType=VARCHAR},#{c_t_oneOwner,jdbcType=VARCHAR},#{c_t_specialOption,jdbcType=VARCHAR},#{c_t_rent,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insert_Contract" parameterType="com.one.kcar.dto.buy.ContractDTO">
+		INSERT INTO kcar_car_contract VALUES (contractIndex_seq.nextval,#{c_num},#{c_c_b_email,jdbcType=VARCHAR},#{c_c_s_email},#{c_c_b_name,jdbcType=VARCHAR},#{c_c_b_tel,jdbcType=VARCHAR},#{c_c_b_zipcode,jdbcType=VARCHAR},#{c_c_b_addr1,jdbcType=VARCHAR},#{c_c_b_addr2,jdbcType=VARCHAR},#{c_c_b_totalPrice,jdbcType=VARCHAR},#{c_c_b_carPrice,jdbcType=VARCHAR},#{c_c_b_registrationPrice,jdbcType=VARCHAR},#{c_c_b_managePrice,jdbcType=VARCHAR},#{c_c_b_registPrice,jdbcType=VARCHAR},#{c_c_b_kw,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insert_rentCar" parameterType="com.one.kcar.dto.rent.kcarCarRentDTO">
+		INSERT INTO kcarcarrent VALUES (#{crNumber},#{crPrice},#{crMonth},#{crFirstPrice},#{crCc},#{crYear},#{crColor},#{crDistance},#{crMission},#{crFuel},#{crNewPrice},#{crGrade},#{crSpecialPrice,jdbcType=VARCHAR},#{crBrand},#{crpPhoto},#{crName},#{m_email,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insert_rentCarOption" parameterType="com.one.kcar.dto.rent.kcarCarRentOptionDTO">
+		INSERT INTO kcarcarrentoption VALUES (#{crNumber},#{croSunRoof,jdbcType=VARCHAR},#{croHiPass,jdbcType=VARCHAR},#{croBackSensor,jdbcType=VARCHAR},#{croCamera,jdbcType=VARCHAR},#{croNavigation,jdbcType=VARCHAR},#{croHandleHot,jdbcType=VARCHAR},#{croAirBag,jdbcType=VARCHAR},#{croSmartKey,jdbcType=VARCHAR},#{croBlackBox,jdbcType=VARCHAR})
+	</insert>
+	<select id ="checked" parameterType="String" resultType="int">
+		select count(*) from kcar_sell_request where m_email =#{m_email}
+	</select>
+	<select id="buy_check" parameterType="String" resultType="int">
+		select count(*) from kcar_car_contract cc left join kcar_car c on c.c_num = cc.c_num where cc.c_c_b_email=#{m_email}
+	</select>
+	<select id="rent_check" parameterType="String" resultType="int">
+		select count(*) from kcarcarrent where m_email=#{m_email}
+	</select>
+	<select id="csVoc_list" parameterType="String" resultType="com.one.kcar.dto.cs.CsDTO">
+		select * from kcar_service
+	</select>
+	<insert id="insert_notice" parameterType="com.one.kcar.dto.cs.CsDTO">
+		INSERT INTO kcar_notice VALUES (n_no_seq.nextval,#{n_title},#{n_content},#{n_date})
+	</insert>
+	<insert id="insert_event" parameterType="com.one.kcar.dto.cs.EventDTO">
+		INSERT INTO kcar_event VALUES (e_no_seq.nextval,#{e_title},#{e_content},#{e_startdate},#{e_enddate},#{e_date})
+	</insert>
+	<select id="buy_list" parameterType="String" resultType="com.one.kcar.dto.admin.CarDTO">
+		select c.* from kcar_car_contract cc left join kcar_car c on c.c_num = cc.c_num where cc.c_c_b_email=#{m_email}
+	</select>
+	<update id="update_sell">
+		update kcar_sell_request set s_r_progress=#{s_r_progress} where s_r_num=#{s_r_num}
+	</update>
+	<select id="rent_list"  resultType="com.one.kcar.dto.rent.kcarCarRentDTO">
+		select * from kcarcarrent where m_email=#{m_email}
+	</select>
+	<select id="storeList" resultType="com.one.kcar.dto.buy.StoreDTO">
+		select * from kcar_store
+	</select>
+	<select id="brandList" resultType="com.one.kcar.dto.buy.BrandDTO">
+		select * from kcar_carbrand
+	</select>
+	<select id="checkBrand" resultType="com.one.kcar.dto.buy.BrandDTO">
+		select * from kcar_carbrand where cb_brand=#{cb_brand}
+	</select>
+	<select id="checkBrandModel" resultType="com.one.kcar.dto.buy.BrandModelDTO">
+		select * from kcar_carbrand_model where cb_m_model=#{cb_m_model}
+	</select>
+	<insert id="insertBrandModel" parameterType="com.one.kcar.dto.buy.BrandModelDTO">
+		select * from kcar_carbrand_model
+	</insert>
+	<insert id="insertBrand" parameterType="com.one.kcar.dto.buy.BrandDTO">
+		select * from kcar_carbrand
+	</insert>
+</mapper>

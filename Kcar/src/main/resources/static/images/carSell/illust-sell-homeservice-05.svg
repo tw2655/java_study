@@ -1,0 +1,20 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path id="f4phkrewha" d="M0 .167h27.728V.5H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path d="M39.483 31.348h3.566a2.951 2.951 0 0 0 2.95-2.952V11.753a2.951 2.951 0 0 0-2.95-2.951H15.173a2.951 2.951 0 0 0-2.952 2.951v3.565" fill="#E2E8EE"/>
+        <path d="M6 37.88H36.828a2.951 2.951 0 0 0 2.95-2.952V18.285a2.951 2.951 0 0 0-2.95-2.952H8.951A2.951 2.951 0 0 0 6 18.285V25.893" fill="#FFF"/>
+        <path d="M5.705 25.878V18.27a2.951 2.951 0 0 1 2.952-2.952h27.875a2.951 2.951 0 0 1 2.951 2.952v16.643a2.951 2.951 0 0 1-2.951 2.952h-3.1" stroke="#16171D" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(6 15.333)">
+            <mask id="x32yhddffb" fill="#fff">
+                <use xlink:href="#f4phkrewha"/>
+            </mask>
+            <path fill="#16171D" mask="url(#x32yhddffb)" d="M0 .5h27.728"/>
+        </g>
+        <path stroke="#16171D" stroke-linecap="round" stroke-linejoin="round" d="M33.432 37.865H4.14M39.483 31.348h3.566a2.951 2.951 0 0 0 2.95-2.952V11.753a2.951 2.951 0 0 0-2.95-2.951H15.173a2.951 2.951 0 0 0-2.952 2.951v3.565M14.84 33.986H7.846M8.993 29.983H2"/>
+        <g stroke="#B70F28" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m17.756 22.904 2.32 7.38 2.524-5.717 2.57 5.702 2.222-7.369M26.564 25.632h2.249M16.375 25.632h2.239"/>
+        </g>
+    </g>
+</svg>
