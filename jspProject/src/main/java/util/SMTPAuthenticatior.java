@@ -7,6 +7,6 @@ public class SMTPAuthenticatior extends Authenticator{
 
     @Override
     protected PasswordAuthentication getPasswordAuthentication() {
-        return new PasswordAuthentication("kmje2275","xodnjs2655");
+        return new PasswordAuthentication("id","passwod");
     }
 }
